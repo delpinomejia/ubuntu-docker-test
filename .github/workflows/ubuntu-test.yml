@@ -1,4 +1,4 @@
-name: Docker Build and Push
+nomejia/ubuntu-test:latestname: Docker Build and Push
 
 on:
   push:
@@ -26,4 +26,4 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Push Docker image to Docker Hub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}
+        run: docker push delpinomejia/ubuntu-test:latest
