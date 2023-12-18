@@ -23,7 +23,7 @@ jobs:
           docker buildx build --platform linux/amd64,linux/arm64 -t ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:latest .
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ DOCKERHUB_USERNAME }} --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ vars.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:latest
