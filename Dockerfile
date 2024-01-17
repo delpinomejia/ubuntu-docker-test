@@ -8,9 +8,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 
 # Install required packages
-RUN apt-get install -y \
-    curl \
-    vim
+RUN apt-get install -y curl
+RUN apt-get install -y vim
+RUN apt-get install -y apt-utils
 
 # Clean up the package cache to reduce the image size
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
